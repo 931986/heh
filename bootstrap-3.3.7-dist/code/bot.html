@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width,initial-scale-1,user-scalable-no">
+
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bot.css">
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container">
+    <div class="navbar-header">
+        <a href="#" class="navbar-brand" >简书</a>
+        <a href="#" class="navbar-brand " style="margin:0;padding:0;">
+
+            <img  width="60px" height="50px"
+                    src="https://gss0.bdstatic.com/94o3dSag_xI4khGkpoWK1HF6hhy/baike/w%3D268%3Bg%3D0/sign=27ac483e40a7d933bfa8e3759570b62e/5882b2b7d0a20cf419b28cf574094b36acaf99fd.jpg">
+
+        </a>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav navbar-right " >
+            <li class="active">
+                <a href="#" ><span class="glyphicon glyphicon-home"></span> 守夜</a>
+            </li>
+            <li>
+                <a href="#"><span class="glyphicon glyphicon-list"> </span> 紫薰</a>
+            </li><li>
+            <a href="#"><span class="glyphicon glyphicon-fire"></span> 安利</a>
+        </li><li>
+            <a href="#" ><span class="glyphicon glyphicon-question-sign"></span> 观鱼</a>
+        </li>
+        </ul>
+    </div>
+</div>
+
+
+</nav>
+<div id="myCarousel" class="carousel slide"  >
+   <ol class="carousel-indicators">
+       <li data-target="#myCarousel" data-slide-to="0" class="active" ></li>
+   <li data-target="#myCarousel" data-slide-to="1"></li>
+   <li data-target="#myCarousel" data-slide-to="2"></li>
+   </ol>
+    <div class="carousel-inner" >
+<div class="item active" style="background:#223240"> <img class="wide" src="img/1.jpg" alt="0"></div>
+    <div class="item "> <img class="wide" src="img/2.jpg" alt="1"></div>
+    <div class="item"> <img class="wide" src="img/3.jpg" alt="2"></div>
+    </div>
+    <a href="#myCarousel" data-slide="prev" class="carousel-control left font">&lsaquo;</a>
+    <a href="#myCarousel" data-slide="next" class="carousel-control right font">&rsaquo;</a>
+</div>
+
+    <button class="btn btn-primary" data-toggle="dropdown" data-target="#dropdown">
+        下拉菜单<span class="caret"></span>
+    </button>
+<div class="dropdown table-hover" id="dropdown">
+        <ul class="dropdown-menu">
+            <li><a href="#">sun</a></li>
+    <li> <a href="#">..</a></li>
+            <li><a href="#">hehe</a></li>
+        </ul>
+
+</div>
+<script src="jquary.js"></script>
+<script src="bootstrap.js"></script>
+<script>
+    $(function () {
+        $("#MyCarousel").carousel({
+            interval:4000
+        });
+
+
+    });
+    $('.carousel-control').css("line-height", $(".carousel-inner div").height() + 'px');
+    $(window).resize(function() {
+        $(function () {
+            $('.carousel-control').css("line-height", $(".carousel-inner div").height() + 'px');
+//var $height=$('.carousel.inner img).eq(0).height() ||$('.carousel.inner img).eq(1).height() ||$('.carousel.inner img).eq(2).height() ;
+            //$('.carousel control').css('line-height',$height+'px');
+        })
+    });
+$("#dropdown").on('hidden.bs.dropdown',function(){
+    alert("修改成功")
+})
+</script>
+<div class="input-group">
+    <div class="input-group-addon">$</div>
+    <button class="btn btn-default col-xs-12 col-md-4 col-lg-1 col-lg-offset-2"><span class="glyphicon glyphicon-star">确定</span></button>
+</div>
+
+</body>
+</html>

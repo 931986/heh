@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+-->
+<script>
+
+   /* var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+    ctx.fillRect(0,0,150,100);
+*/var a=0,b=0,c=0,d=0,e=0;
+   for(var i=0;i<=99999;i++){
+       a=i/10000;
+       b=(i/1000)%10;
+       c=(i/100)%10;
+       d=(i/10)%10;
+       e=i%10;
+       if(a>0){
+           if(a===e&&b===d){
+              document.write(i);
+           }
+       }
+               else if(b<0&&c>0){
+                   c=i/100;
+                   if(c===e){
+                       document.write(i);
+                   }
+                       else if(a<0&&b>0){
+                           b=i/1000;
+                           if(b===e&&c===d){
+                              document.write(i);
+                           }
+               }
+           }
+
+   }
+</script>
+
+
+</body>
+</html>

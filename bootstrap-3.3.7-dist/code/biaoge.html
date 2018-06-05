@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        body{
+            height:2000px;
+        }
+        .zhiding{
+    width:60px;
+            height:40px;
+           right:200px;
+            top:500px;
+            position:fixed;
+
+            z-index:5;
+            font-size:20px;
+            border:none;
+display:none;
+        }
+    </style>
+    <script src="jquary.js">
+        </script>
+    <script>
+        window.onload = function() {
+            var oTop = document.getElementById("scrollSearchDiv");
+            var screenw = document.documentElement.clientWidth || document.body.clientWidth;
+            var screenh = document.documentElement.clientHeight || document.body.clientHeight;
+            oTop.style.left = screenw - oTop.offsetWidth + "px";
+            oTop.style.top = screenh - oTop.offsetHeight + "px";
+
+            window.onscroll = function () {
+                var scrolltop = document.documentElement.scrollTop || document.body.scrollTop;
+                oTop.style.top = screenh - oTop.offsetHeight + scrolltop + "px";
+
+
+                //绑定滚动条事件  
+                //绑定滚动条事件  
+
+
+                var sTop = parseInt(scrolltop);
+                if (sTop >= 130) {
+                    if (!oTop.is(":visible")) {
+                        try {
+                            oTop.fadeIn();
+                        } catch (e) {
+                            oTop.show();
+                        }
+                    }
+                }
+                else {
+                    if (sTop.is(":visible")) {
+                        try {
+                            sTop.fadeOut();
+                        } catch (e) {
+                            sTop.hide();
+                        }
+                    }
+                }
+            };
+            oTop.onclick = function () {
+                document.documentElement.scrollTop = document.body.scrollTop = 0;
+            };
+        }
+
+    </script>
+
+
+
+</head>
+<body>
+<table>
+    <tr><td>111</td></tr>
+</table>
+<div >
+<button class="zhiding btn btn-primary btn-block" id= "scrollSearchDiv" >
+    <a href="javascript:void(0)">置顶</a>
+</button>
+</div>
+<button>222</button>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+    body{
+        height:2000px;
+    }
+    .zhiding{
+        width:60px;
+        height:40px;
+        right:200px;
+        top:500px;
+        position:fixed;
+
+        z-index:5;
+        font-size:20px;
+        border:none;
+        display:block;
+    }
+    .box{
+        display:flex;
+        align-items: center;//子元素垂直居中
+    justify-content: center;//子元素水平居中
+    }
+    </style> 
+    <script src="jquary.js"></script>
+<script>
+    $(function () {
+        //绑定滚动条事件  
+        //绑定滚动条事件  
+        $(window).bind("scroll", function () {
+            var sTop = $(window).scrollTop();
+            var sTop = parseInt(sTop);
+            if (sTop >= 130) {
+                if (!$("#Div").is(":visible")) {
+                    try {
+                        $("#Div").slideDown();
+                    } catch (e) {
+                        $("#Div").show();
+                    }
+                }
+            }
+            else {
+                if ($("#Div").is(":visible")) {
+                    try {
+                        $("#Div").slideUp();
+                    } catch (e) {
+                        $("#Div").hide();
+                    }
+                }
+            }
+        });
+    })
+</script>
+</head>
+<body>
+
+    <button class="zhiding btn btn-primary btn-block" id="Div">
+        <a href="#">置顶</a>
+    </button>
+<div class="box">
+    <img src="img/iPhoneX.svg">
+    <span>iphonex</span>
+</div>
+</body>
+</html>

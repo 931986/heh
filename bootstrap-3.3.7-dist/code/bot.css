@@ -1,0 +1,18 @@
+#myCarousel{
+    margin:50px 0 0 0;
+}
+.wide{
+    width:800px;
+    height:400px;
+}
+.carousel-inner img{
+    margin:0 auto;
+}
+.font{
+    font-size:100px;
+
+}
+*{
+    margin:0;
+    padding:0;
+}

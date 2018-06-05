@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquary.js"></script>
+</head>
+<body>
+
+<script>
+    // 请把你的代码写在这条注释以下
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function(position){
+            $("data").html("latitude:"+position.coords.latitude+"<br>longitude: " + position.coords.longitude);});
+    }
+
+    function ajax_fun(){
+        $.ajax({
+            type:'post',
+            data:$('#user').val(),
+            url:'login.php',
+            success:function(response){
+                alert(response);
+
+            }
+
+        });
+
+    }
+
+
+    // 请把你的代码写在这条注释以上
+</script>
+<div id = "data">
+    <h4>You are here:</h4>
+
+
+</div>
+    <img src="http://game.gtimg.cn/upload/adw/image/1508748993/1508748993.jpg?_r=1508748993" alt="1">
+<form >
+    <input id='user' name ="username" />
+    <input  type="button" value="提交" onclick="ajax_fun()" />
+</form>
+<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+    <span class="icon-bar"></span>
+</button>
+</div>
+<div class="collapse navbar-collapse" id="navbar-collapse">
+    <ul class="nav navbar-nav navbar-right " >
+        <li class="active">
+            <a href="#" ><span class="glyphicon glyphicon-home"></span> 守夜</a>
+        </li>
+        <li>
+            <a href="#"><span class="glyphicon glyphicon-list"> </span> 紫薰</a>
+        </li><li>
+        <a href="#"><span class="glyphicon glyphicon-fire"></span> 安利</a>
+    </li><li>
+        <a href="#" ><span class="glyphicon glyphicon-question-sign"></span> 观鱼</a>
+    </li>
+    </ul>
+</div>
+
+</body>
+</html>

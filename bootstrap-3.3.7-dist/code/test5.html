@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>js中的Ajax经典示例</title>
+        <script type="text/javascript" src="jquary.js"></script>
+        <script type="text/javascript">
+         function ajax() {
+
+                 //先声明一个异步请求对象
+
+             function  getXMLHTTPRequest() {
+                 var xRequest=null;
+                 if(window.XMLHttpRequest){
+                     xRequest=new XMLHttpRequest();
+                 }
+                 else if(window.ActiveXObject){
+                     xRequest=new ActiveXObject("Microsoft.XMLHTTP");
+                 }
+                 return xRequest;
+             }
+             //判定是否Ie
+             var request = getXMLHTTPRequest();
+                  //如果实例化成功,就调用open()方法,就开始准备向服务器发送请求
+
+                         request.open("get", "About.aspx" );
+                           request.send(null);
+                         request.onreadystatechange = doResult; //设置回调函数
+
+
+
+                 //回调函数
+                  //一旦readyState的值改变,将会调用这个函数,readyState=4表示完成相应
+
+                 //设定函数doResult()
+                 function doResult() {
+
+                          if (request.readyState === 4) {//4代表执行完成
+
+
+                if (request.status === 200) {//200代表执行成功
+                                         //将xmlHttpReg.responseText的值赋给ID为resText的元素
+                                          document.getElementById("resText").innerHTML = xmlHttpReg.responseText;
+
+
+                                      }
+                              }
+
+                      }
+
+
+              }
+         </script>
+     </head>
+ <body>
+
+      <div id="resText"></div>
+      <form  action="">
+           <input type="submit" value="小胡子"  onclick="ajax();"/>
+         </form>
+
+ </body>
+ </html>

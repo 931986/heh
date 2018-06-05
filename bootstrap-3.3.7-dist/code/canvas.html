@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <style>
+        .yi{
+            margin-left:10px;
+        }
+       canvas{
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="navbar-header">
+    <a href="#" class="navbar-brand">power</a>
+    </div>
+    <ul class="nav navbar-nav ">
+        <li class="yi"><a href="#">首页</a></li>
+        <li class="yi"><a href="#">建议 </a></li>
+        <li class="dropdown yi"><a href="#" data-toggle="dropdown">mm <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+            <li class="yi"><a href="#" > syy</a></li>
+            <li class="yi"><a href="#">&nbsp;sgg</a></li>
+            <li class="yi"><a href="#">&nbsp;skt</a></li>
+        </ul>
+
+        </li>
+    </ul>
+
+</nav>
+<canvas id="my" width="400" height="400" style="border:black solid">
+    <img id="c" src="http://game.gtimg.cn/upload/adw/image/1508748993/1508748993.jpg?_r=1508748993" alt="1">
+
+    <h1>sun awergo</h1>
+</canvas>
+<script>
+    var can=document.getElementById("my");
+    var img=document.getElementById("c");
+    c=can.getContext("2d");
+    c.fillstyle="white";
+c.strokeStyle="blue";
+ c.lineWidh=2;
+ c.beginPath();
+ c.moveTo(0,40);
+ c.lineTo(30,0);
+    c.stroke();
+ c.lineTo(60,40);
+    c.stroke();
+ c.lineTo(300,40);
+
+ c.stroke();
+
+ c.closePath();
+ c.font=" 40px italic";
+ c.fillText("sun the Empire" ,60,36);
+c.save();
+c.translate(20,20);
+c.fillRect(0,0,20,20);
+
+c.beginPath();
+c.drawImage(img,100,50,200,200);
+c.closePath();
+
+c.beginPath();
+c.arc(80,80,40,0,Math.PI*2,true);
+c.fillStyle="white";
+c.strokeStyle="blue";
+c.closePath();
+c.stroke();
+c.fill();
+    c.beginPath();
+    c.arc(200,160,40,0,Math.PI*2,true);
+    c.fillStyle="white";
+
+    c.closePath();
+    c.fill();
+
+</script>
+<script src="jquary.js"></script>
+<script src="bootstrap.js"></script>
+</body>
+
+</html>
